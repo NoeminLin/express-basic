@@ -18,17 +18,16 @@ app.use(express.static('public'))
 app.get('/', (req, res) => {
   res.render('index')
 })
-app.get('/about', (req, res) => {
-  const menuClass = { about: 'active', protfolio: '', contact: '' }
-  res.render('about', { menuClass: menuClass })
-})
-app.get('/protfolio', (req, res) => {
-  const menuClass = { about: '', protfolio: 'active', contact: '' }
-  res.render('protfolio', { menuClass: menuClass })
-})
-app.get('/contact', (req, res) => {
-  const menuClass = { about: '', protfolio: '', contact: 'active' }
-  res.render('contact', { menuClass: menuClass })
+app.get('/:page', (req, res) => {
+  const page = req.params.page;
+  console.log(page);
+  const menuClass = { about: '', protfolio: '', contact: '' };
+  if (page === 'about' || page === 'protfolio' || page === 'contact') {
+    menuClass[page] = 'active'
+    res.render(page, { menuClass: menuClass })
+  } else {
+    res.render('index')
+  }
 })
 
 // Listen and start the server
