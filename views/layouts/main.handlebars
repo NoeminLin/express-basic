@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Express 基礎驗收</title>
+
+  <link rel="stylesheet" href="/stylesheet/style.css">
+</head>
+
+<body>
+  <!-- navigation -->
+  <nav>
+    <a href="/">回到首頁</a>
+    <ul class="menu">
+      <li><a href="/about" class="{{menuClass.about}}">About</a></li>
+      <li><a href="/protfolio" class="{{menuClass.protfolio}}">Protfolio</a></li>
+      <li><a href="/contact" class="{{menuClass.contact}}">Contact</a></li>
+    </ul>
+  </nav>
+  <!-- partial template -->
+  {{{ body }}}
+</body>
+
+</html>
