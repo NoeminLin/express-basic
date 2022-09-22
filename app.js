@@ -20,7 +20,6 @@ app.get('/', (req, res) => {
 })
 app.get('/:page', (req, res) => {
   const page = req.params.page;
-  console.log(page);
   const menuClass = { about: '', protfolio: '', contact: '' };
   if (page === 'about' || page === 'protfolio' || page === 'contact') {
     menuClass[page] = 'active'
